@@ -24,6 +24,15 @@ class HomeKitManager: NSObject, ObservableObject, HMHomeManagerDelegate {
     // 홈 목록이 업데이트될 때 호출됨
     func homeManagerDidUpdateHomes(_ manager: HMHomeManager) {
         self.homes = homeManager.homes // 홈 목록을 업뎃하여 homes 배열에 저장한다.
+        if let firstHome = homes.first {
+            self.selectedHome = firstHome
+            if let firstRoom = firstHome.rooms.first {
+                self.selectedRoom = firstRoom
+                if let firstAccessory = firstRoom.accessories.first {
+                    self.selectedAccessory = firstAccessory
+                }
+            }
+        }
     }
 
     // 새로운 홈이 추가될 때 호출됨

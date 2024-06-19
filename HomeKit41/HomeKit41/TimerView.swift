@@ -13,7 +13,7 @@ struct TimerView: View {
             
             //            RadialProgressView(progress: timerViewModel.progress)
             //                .frame(width: 100, height: 100)
-            
+            //시계
             HStack {
                 Picker("Hours", selection: $timerViewModel.selectedHours) {
                     ForEach(0..<24) { hour in

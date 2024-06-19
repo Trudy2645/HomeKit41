@@ -12,8 +12,6 @@ class LightController {
                         characteristic.writeValue(on) { error in
                             if let error = error {
                                 print("Error setting power state: \(error)")
-                            } else {
-                                print("Successfully set power state to \(on ? "On" : "Off")")
                             }
                         }
                     }
